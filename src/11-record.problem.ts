@@ -1,7 +1,24 @@
 import { expect, it } from "vitest";
 
+interface Cache {
+  [id: string]: string
+
+}
+
 const createCache = () => {
-  const cache = {};
+  // Solution 1
+  // const cache: Record<string, string> = {
+  //   // add(id: string, value: string) => void;
+  //   // remove(id: string) => void;
+  // };
+
+  // Solution 2
+  // const cache: {
+  //   [id: string]: string
+  // } = {};
+
+  // Solution 3
+  const cache: Cache = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;

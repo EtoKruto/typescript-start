@@ -3,7 +3,9 @@ interface User {
   firstName: string;
   lastName: string;
   role: "admin" | "user" | "super-admin";
-  posts: Post;
+  // posts: Post[];
+  // or
+  posts: Array<Post>
 }
 
 interface Post {
@@ -20,6 +22,10 @@ export const defaultUser: User = {
     {
       id: 1,
       title: "How I eat so much cheese",
+    },
+    {
+      id: 2,
+      title: "Why I don't eat more vegetables",
     },
   ],
 };

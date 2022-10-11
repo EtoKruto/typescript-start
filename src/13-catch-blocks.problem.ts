@@ -5,9 +5,25 @@ const tryCatchDemo = (state: "fail" | "succeed") => {
     if (state === "fail") {
       throw new Error("Failure!");
     }
-  } catch (e) {
-    return e.message;
   }
+  // OPTION 1
+  // catch (e: any) {
+  //   return e.message ;
+  // }
+
+  // OPTION 2
+  // catch (e) {
+  //   return (e as Error).message ;
+  // }
+
+  // OPTION 3
+  catch (e) {
+    if (e instanceof Error) {
+      return e.message;
+    }
+  }
+
+
 };
 
 it("Should return the message when it fails", () => {
